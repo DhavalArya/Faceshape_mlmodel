@@ -36,20 +36,20 @@ async def predict_image(imagepath:UploadFile = File(...)):
     except Exception as e:
         print(f"Broken: {imagepath}")
     
-#     images = numpy.array(images, dtype = 'float32')
-#     images = images / 255.0
+    images = numpy.array(images, dtype = 'float32')
+    images = images / 255.0
 
-#     class_names = ['Heart', 'Oblong', 'Oval', 'Round', 'Square']
+    class_names = ['Heart', 'Oblong', 'Oval', 'Round', 'Square']
 
-#     model = tensorflow.keras.models.load_model('my_model.h5')
-#     predictions = model.predict(images)     # Vector of probabilities
-#     pred_labels = numpy.argmax(predictions, axis = 1) # We take the highest probability
-#     result = class_names[pred_labels[0]]
+    model = tensorflow.keras.models.load_model('my_model.h5')
+    predictions = model.predict(images)     # Vector of probabilities
+    pred_labels = numpy.argmax(predictions, axis = 1) # We take the highest probability
+    result = class_names[pred_labels[0]]
 #     print(result)
 
-#     # image = load_image_into_numpy_array(await image.read())
-#     # print(type(image), imagepath)
-    return "welcome to post!"
+    # image = load_image_into_numpy_array(await image.read())
+    # print(type(image), imagepath)
+    return result
     # face_image = preprocessing.image.load_img(image.file_name, target_size=(150,150))
 
 # if __name__ == "__main__":
