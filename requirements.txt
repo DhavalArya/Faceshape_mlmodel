@@ -10,3 +10,4 @@ httptools
 pydantic
 pickle5
 scikit-learn
+python-multipart
