@@ -53,4 +53,4 @@ async def predict_image(imagepath:UploadFile = File(...)):
     # face_image = preprocessing.image.load_img(image.file_name, target_size=(150,150))
 
 if __name__ == "__main__":
-    uvicorn.run(app, port=8080, host='0.0.0.0')
+    uvicorn.run(app, port=8000, host='127.0.0.1')
