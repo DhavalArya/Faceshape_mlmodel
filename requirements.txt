@@ -1,6 +1,6 @@
 fastapi
 numpy
-opencv_python
+opencv-contrib-python-headless
 Pillow
 tensorflow-cpu
 uvicorn
