@@ -4,7 +4,7 @@ import uvicorn
 import tensorflow
 import numpy
 from PIL import Image
-# import cv2
+import cv2
 
 IMAGE_SIZE = (150,150)
 
