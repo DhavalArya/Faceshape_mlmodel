@@ -55,19 +55,19 @@ async def predict_image(imagepath: bytes = File(...)):
     images = numpy.array(images, dtype = 'float32')
     images = images / 255.0
 
-    class_names = ['Heart', 'Oblong', 'Oval', 'Round', 'Square']
+    class_names = ["Heart", "Oblong", "Oval", "Round", "Square"]
     matching_names = {
-        'Oval': 'Varun Dhawan, Hrithik Roshan, Emma Watson, Cameron Diaz',
-        'Oblong': 'Akshay Kumar, Katrina Kaif',
-        'Heart': 'Nick Jonas, Bradley Cooper, Alia Bhatt, Deepika Padukone',
-        'Round': 'Shahid Kapoor, Leonardo Dicaprio, Aishwarya Rai Bacchan',
-        'Square': 'Aamir Khan, Tom Cruise, Jennifer Aniston'
+        "Oval": "Varun Dhawan, Hrithik Roshan, Emma Watson, Cameron Diaz",
+        "Oblong": "Akshay Kumar, Katrina Kaif",
+        "Heart": "Nick Jonas, Bradley Cooper, Alia Bhatt, Deepika Padukone",
+        "Round": "Shahid Kapoor, Leonardo Dicaprio, Aishwarya Rai Bacchan",
+        "Square": "Aamir Khan, Tom Cruise, Jennifer Aniston"
     }
 
     model = tensorflow.keras.models.load_model('my_model.h5')
     predictions = model.predict(images)    
     pred_labels = numpy.argmax(predictions, axis = 1) 
-    result = class_names[pred_labels[0]] + '.\\nYour face matches with ' + matching_names[class_names[pred_labels[0]]]
+    result = class_names[pred_labels[0]] + '.\\nYour face matches with ' + matching_names["Heart"]
     return result
 
 
