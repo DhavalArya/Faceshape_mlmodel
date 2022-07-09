@@ -5,9 +5,4 @@ Pillow
 tensorflow-cpu
 uvicorn
 gunicorn
-uvloop
-httptools
-pydantic
-pickle5
-scikit-learn
 python-multipart
